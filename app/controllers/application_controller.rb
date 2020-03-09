@@ -17,7 +17,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/signup" do
-    #your code here
     user = User.create(username: params[:username], password: params[:password])
 
       if params[:username] == "" || params[:password] == ""
@@ -41,7 +40,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/login" do
-    ##your code here
     user = User.find_by(username: params[:username])
 
     if user && user.authenticate(params[:password])
